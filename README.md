@@ -1,1 +1,4 @@
 # CIS-lab-10
+In the implementation, threading for the IO bound task was faster than the mulitproccessing for the CPU bound task. This is because threading is better suited for IO bound tasks and can run concurrently in idle. Due to python's use of GIL it can switch IO operations maximizing efficiency. 
+
+On the other hand multiprocessing is better suited for CPU bounds tasks because it has its own python interpreter bypassing the need for GIL and using multiple CPU cores. The sum of squares calculation benefits from parallel executions across the processes making it slower compared to threading. For IO bound tasks threading is the clear choice. For CPU bound tasks like math or data processing the use of multi processing would be ideal.

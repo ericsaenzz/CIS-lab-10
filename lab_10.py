@@ -52,21 +52,21 @@ def run_multiprocessing():
     return end_time - start_time
 
 def main():
-    print("Running Threading (I/O-bound) Tasks...")
+    print(">> Threading I/O-bound Tasks..")
     threading_time = run_threading()
-    print(f"Threading completed in {threading_time:.2f} seconds\n")
+    print(f"Threading completed in {threading_time:.2f} sec.\n")
     
-    print("Running Multiprocessing (CPU-bound) Tasks...")
+    print(">> Multiprocessing CPU-bound Tasks...")
     multiprocessing_time = run_multiprocessing()
-    print(f"Multiprocessing completed in {multiprocessing_time:.2f} seconds\n")
+    print(f"Multiprocessing completed in {multiprocessing_time:.2f} sec.\n")
     
     # Performance comparison
-    print("Performance Comparison:")
-    print(f"Threading (I/O-bound) took {threading_time:.2f} seconds")
-    print(f"Multiprocessing (CPU-bound) took {multiprocessing_time:.2f} seconds")
-    print(f"Threading was {multiprocessing_time/threading_time:.2f}x faster" 
+    print(">> Performance Comparison:")
+    print(f"Threading (I/O bound) took {threading_time:.2f} sec.\n")
+    print(f"Multiprocessing (CPU bound) took {multiprocessing_time:.2f} sec.")
+    print(f"Threading was {multiprocessing_time/threading_time:.2f} times faster" 
           if threading_time < multiprocessing_time 
-          else f"Multiprocessing was {threading_time/multiprocessing_time:.2f}x faster")
+          else f"Multiprocessing was {threading_time/multiprocessing_time:.2f} times faster")
 
 if __name__ == "__main__":
     main()
